@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("this is home page");
+const router = express.Router({ caseSensitive: true });
+app.use(router);
+
+app.get("/home", (req, res) => {
+  res.send("this is home page url");
 });
 app.post("/", (req, res) => {
   res.send("this is home page with post request");
